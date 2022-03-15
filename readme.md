@@ -1,0 +1,2 @@
+# MCSsms
+ school management system 
