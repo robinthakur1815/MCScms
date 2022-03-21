@@ -23,6 +23,8 @@ class StudentRecordUpdate extends FormRequest
         return [
             'name' => 'required|string|min:6|max:150',
             'gender' => 'required|string',
+            'father_name' => 'sometimes|nullable|string',
+            'mother_name' => 'sometimes|nullable|string',
             'phone' => 'sometimes|nullable|string|min:6|max:20',
             'email' => 'sometimes|nullable|email|max:100|unique:users,id',
             'photo' => 'sometimes|nullable|image|mimes:jpeg,gif,png,jpg|max:2048',

@@ -34,6 +34,14 @@
                                 <td>{{ $sr->adm_no }}</td>
                             </tr>
                             <tr>
+                                <td class="font-weight-bold">Father Name</td>
+                                <td>{{ $sr->father_name }}</td>
+                            </tr>
+                            <tr>
+                                <td class="font-weight-bold">Mother name</td>
+                                <td>{{ $sr->mother_name }}</td>
+                            </tr>
+                            <tr>
                                 <td class="font-weight-bold">Class</td>
                                 <td>{{ $sr->my_class->name.' '.$sr->section->name }}</td>
                             </tr>

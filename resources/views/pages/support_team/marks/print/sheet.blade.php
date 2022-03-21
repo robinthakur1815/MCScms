@@ -3,6 +3,8 @@
     <tbody>
     <tr>
         <td><strong>NAME:</strong> {{ strtoupper($sr->user->name) }}</td>
+        <td><strong>FATHER NAME:</strong> {{ strtoupper($sr->Father_name) }}</td>
+        <td><strong>MOTHER NAME:</strong> {{ strtoupper($sr->mother_name) }}</td>
         <td><strong>ADM NO:</strong> {{ $sr->adm_no }}</td>
         <td><strong>HOUSE:</strong> {{ strtoupper($sr->house) }}</td>
         <td><strong>CLASS:</strong> {{ strtoupper($my_class->name) }}</td>
