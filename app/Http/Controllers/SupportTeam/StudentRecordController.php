@@ -60,12 +60,13 @@ class StudentRecordController extends Controller
 
         $data['user_type'] = 'student';
         $data['name'] = ucwords($req->name);
+        $data['guardain'] = ucwords($req->guardain);
         $data['code'] = strtoupper(Str::random(10));
         $data['password'] = Hash::make('student');
         $data['photo'] = Qs::getDefaultUserImage();
         $adm_no = $req->adm_no;
         $data['username'] = strtoupper(Qs::getAppCode().'/'.$ct.'/'.$sr['year_admitted'].'/'.($adm_no ?: mt_rand(1000, 99999)));
-
+        
         if($req->hasFile('photo')) {
             $photo = $req->file('photo');
             $f = Qs::getFileMetaData($photo);
@@ -75,7 +76,8 @@ class StudentRecordController extends Controller
         }
 
         $user = $this->user->create($data); // Create User
-
+        $sr['father_name'] = ucwords($req->father_name);
+        $sr['mother_name'] = ucwords($req->mother_name);
         $sr['adm_no'] = $data['username'];
         $sr['user_id'] = $user->id;
         $sr['session'] = Qs::getSetting('current_session');
