@@ -23,7 +23,7 @@ class SettingsTableSeeder extends Seeder
             ['type' => 'term_begins', 'description' => '7/10/2021'],
             ['type' => 'phone', 'description' => '0123456789'],
             ['type' => 'address', 'description' => '18B North Central Park, Behind Central Square Tourist Center'],
-            ['type' => 'system_email', 'description' => 'cjacademy@cj.com'],
+            ['type' => 'system_email', 'description' => 'robinthakur344@gmail.com'],
             ['type' => 'alt_email', 'description' => ''],
             ['type' => 'email_host', 'description' => ''],
             ['type' => 'email_pass', 'description' => ''],

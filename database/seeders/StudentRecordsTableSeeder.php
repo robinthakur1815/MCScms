@@ -50,10 +50,10 @@ class StudentRecordsTableSeeder extends Seeder
         $section = Section::first();
 
         $user = User::factory()->create([
-            'name' => 'Student CJ',
+            'name' => 'Student Mcs',
             'user_type' => 'student',
             'username' => 'student',
-            'password' => Hash::make('cj'),
+            'password' => Hash::make('Student'),
             'email' => 'student@student.com',
 
         ]);

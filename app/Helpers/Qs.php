@@ -26,7 +26,7 @@ class Qs
 
     public static function getAppCode()
     {
-        return self::getSetting('system_title') ?: 'CJ';
+        return self::getSetting('system_title') ?: 'Mcs';
     }
 
     public static function getDefaultUserImage()
@@ -101,7 +101,7 @@ class Qs
 
     public static function getStudentData($remove = [])
     {
-        $data = ['my_class_id', 'section_id', 'my_parent_id', 'dorm_id', 'dorm_room_no', 'year_admitted', 'house', 'age'];
+        $data = ['my_class_id', 'father_name', '','section_id', 'my_parent_id', 'dorm_id', 'dorm_room_no', 'year_admitted', 'house', 'age'];
 
         return $remove ? array_values(array_diff($data, $remove)) : $data;
 
