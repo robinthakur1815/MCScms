@@ -13,11 +13,9 @@ class LgasTableSeeder extends Seeder
     {
         DB::table('lgas')->delete();
 
-        $state_id = [1
-        ];
+       $state_id = [1, 1, 1, 1, 2, 2, 2, 2 ,3 ];
 
-        $lgas = ["ghazaibad"
-        ];
+        $lgas = ["Ghazaibad", "haipur", "nodia", "Bende", "delhi", " North-delhi", "South-delhi", "newdelhi","greater-nodia" ];
 
         for($i=0; $i<count($lgas); $i++){
             Lga::create(['state_id' => $state_id[$i], 'name' => $lgas[$i]]);

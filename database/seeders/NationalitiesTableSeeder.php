@@ -15,7 +15,7 @@ class NationalitiesTableSeeder extends Seeder
     public function run()
     {
         $nationals = array(
-            'Indian'
+            'Indian' 
         );
 
         foreach ($nationals as $n) {
