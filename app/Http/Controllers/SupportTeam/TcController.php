@@ -39,6 +39,32 @@ class TcController extends Controller
 
         return view('pages.support_team.students.tc.index', $d);
     }
+
+    public function promote(Request $req, $fc, $fs, $tc, $ts)
+    {
+        $oy = Qs::getSetting('current_session'); $d = [];
+        $old_yr = explode('-', $oy);
+        $ny = ++$old_yr[0].'-'.++$old_yr[1];
+        $students = $this->student->getRecord(['my_class_id' => $fc, 'section_id' => $fs, 'session' => $oy ])->get()->sortBy('user.name');
+
+        if($students->count() < 1){
+            return redirect()->route('students.promotion')->with('flash_danger', __('msg.srnf'));
+        }
+
+        foreach($students as $st){
+            $this->student->updateRecord($st->id, $d);
+
+//            Insert New Promotion Data
+            $promote['from_class'] = $fc;
+            $promote['student_id'] = $st->user_id;
+            $promote['from_session'] = $oy;
+            $promote['to_session'] = $ny;
+            // $promote['status'] = $p;
+
+            $this->student->createPromotion($promote);
+        }
+        return redirect()->route('students.promotion')->with('flash_success', __('msg.update_ok'));
+    }
     public function index()
     {
         //
